@@ -39,10 +39,32 @@ public class RobotMap {
 	
 	//Stick 2
 	
+	public final static int JOY_ARM_UP = 4;
+	public final static int JOY_ARM_DOWN = 6;
 	
+	public final static int JOY_GRAB_TOGGLE = 1;
+	
+	public final static int JOY_PUNCH = 2;
+	
+	public final static int JOY_COMBO_EJECT = 5;
 	
 	
 	//Stick 3
+	
+	
+	//Conrols related variables here
+	
+	public final static double FIRST_DRIVE_SPEED = 2200;
+	public final static double SECOND_DRIVE_SPEED = 1200;
+	public final static double THIRD_DRIVE_SPEED = 800;
+	
+	
+	public final static double FIRST_PWM = 1.0;
+	public final static double SECOND_PWM = 0.62;
+	public final static double THIRD_PWM = 0.35;
+	
+	public final static double BUTTON_ARM_SPEED = 0.5;
+	
 	
 	
 	//PWMS HERE
@@ -101,14 +123,6 @@ public class RobotMap {
 
 	//LOGIC VARIABLES
 
-	public final static double FIRST_DRIVE_SPEED = 2200;
-	public final static double SECOND_DRIVE_SPEED = 1200;
-	public final static double THIRD_DRIVE_SPEED = 800;
-	
-	
-	public final static double FIRST_PWM = 1.0;
-	public final static double SECOND_PWM = 0.62;
-	public final static double THIRD_PWM = 0.35;
 
 	
 	//PID parameters for the wheels -- may need to be negative in the subsystem

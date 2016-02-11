@@ -27,6 +27,11 @@ public class Robot extends IterativeRobot {
 
     DriveTrain chassis;
     Joystick driveStick;
+    Joystick auxStick;
+    ClawArm arm;
+    
+    armControl armController;
+    PWMDrive driveControl;
   
 
     /**
@@ -36,8 +41,14 @@ public class Robot extends IterativeRobot {
     public void robotInit() {
 		oi = new OI();
 		driveStick = new Joystick(RobotMap.DRIVE_STICK);
+		auxStick = new Joystick(RobotMap.AUX_STICK);
 		chassis = new DriveTrain();
-		Scheduler.getInstance().add(new PWMDrive(chassis, driveStick));
+		arm = new ClawArm();
+		
+		new armControl(arm, auxStick).start();
+		
+		armController = new armControl(arm, auxStick);
+		driveControl = new PWMDrive(chassis, driveStick);
        
     }
 	
@@ -80,6 +91,8 @@ public class Robot extends IterativeRobot {
         // continue until interrupted by another command, remove
         // this line or comment it out.
         //if (autonomousCommand != null) autonomousCommand.cancel();
+    	armController.start();
+    	driveControl.start();
     }
 
     /**

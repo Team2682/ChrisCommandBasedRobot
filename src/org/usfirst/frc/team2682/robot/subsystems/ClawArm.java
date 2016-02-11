@@ -75,6 +75,14 @@ public class ClawArm extends Subsystem {
     	claw.set(Value.kReverse);
     }
     
+    public void toggleClaw(){
+    	if(isGrab()){
+    		openClaw();
+    	} else {
+    		closeClaw();
+    	}
+    	
+    }
     
     
     public void punch(){

@@ -79,8 +79,9 @@ public class Ladder extends Subsystem {
     	extend.set(speed*syncVal);
     }
     
-    //This sets the conditions under which the ladder is able to move
-    public boolean canMove(double speed){
+    
+    //This sets the conditions under which the ladder is able to extend
+    public boolean canLadder(double speed){
     	if(((speed > 0 &&  ! getTopLimit()) || (speed < 0 &&  ! getBottomLimit())) && time.getMatchTime() > RobotMap.LADDER_UNLOCK_TIME){
     		return true;
     	} else{
