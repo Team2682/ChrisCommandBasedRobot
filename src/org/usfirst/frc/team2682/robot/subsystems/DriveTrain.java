@@ -30,13 +30,16 @@ public class DriveTrain extends Subsystem {
 	
     public void initDefaultCommand() {
     	
+    	nCodeL = new Encoder(RobotMap.LEFT_ENCODE_1, RobotMap.LEFT_ENCODE_2);
+    	nCodeR = new Encoder(RobotMap.RIGHT_ENCODE_1, RobotMap.RIGHT_ENCODE_2);
+    	
     	PWMChassis = new RobotDrive(RobotMap.RIGHT_WHEELS, RobotMap.LEFT_WHEELS);
     	
     	nCodeL.setPIDSourceType(PIDSourceType.kRate);
     	nCodeR.setPIDSourceType(PIDSourceType.kRate);
     	
-    	wheelR = new VictorSP(RobotMap.RIGHT_WHEELS);
-    	wheelL = new VictorSP(RobotMap.LEFT_WHEELS);
+    	wheelR = new VictorSP(8/*RobotMap.RIGHT_WHEELS*/);
+    	wheelL = new VictorSP(7/*RobotMap.LEFT_WHEELS*/);
     	
     	rightControl = new SuperVelocityPID(RobotMap.WHEEL_P, RobotMap.WHEEL_I, RobotMap.WHEEL_D, nCodeR);
     	leftControl = new SuperVelocityPID(RobotMap.WHEEL_P, RobotMap.WHEEL_I, RobotMap.WHEEL_D, nCodeL);

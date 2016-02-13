@@ -31,13 +31,13 @@ public class RobotMap {
 	//JOYSTICK BUTTONS
 
 
-	//Stick 1
+	//Stick 1 - Drive Stick
 	
 	public final static int JOY_SECOND_SPEED = 3;
 	public final static int JOY_THIRD_SPEED = 4;
 	
 	
-	//Stick 2
+	//Stick 2 - Aux Stick
 	
 	public final static int JOY_ARM_UP = 4;
 	public final static int JOY_ARM_DOWN = 6;
@@ -49,7 +49,14 @@ public class RobotMap {
 	public final static int JOY_COMBO_EJECT = 5;
 	
 	
-	//Stick 3
+	//Stick 3 - Aux Panel
+	
+	
+	public final static int JOY_LAD_SWING_TOGGLE = 1;
+	public final static int JOY_LAD_EXT_UP = 2;
+	public final static int JOY_LAD_EXT_DOWN = 3;
+	public final static int JOY_LAD_WIN_UP = 4;
+	public final static int JOY_LAD_WIN_DOWN = 5;
 	
 	
 	//Conrols related variables here
@@ -65,14 +72,17 @@ public class RobotMap {
 	
 	public final static double BUTTON_ARM_SPEED = 0.5;
 	
+	public final static double LAD_SYNC_VALUE = 1.0;
+	
+	
 	
 	
 	//PWMS HERE
 	public final static int RIGHT_WHEELS = 0;
 	public final static int LEFT_WHEELS = 1;
 
-	public final static int LADDER_EXTENDER = 3;
-	public final static int LADDER_WINCH = 4;
+	public final static int LAD_EXT_MOTOR = 3;
+	public final static int LAD_WIN_MOTOR = 4;
 	
 	public final static int ARM_MOTOR = 5;
 
@@ -120,9 +130,6 @@ public class RobotMap {
 	
 	public final static int PUNCH_PNU_1 = 4;
 	public final static int PUNCH_PNU_2 = 5;
-
-	//LOGIC VARIABLES
-
 
 	
 	//PID parameters for the wheels -- may need to be negative in the subsystem

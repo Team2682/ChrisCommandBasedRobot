@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.VictorSP;
 
 /**
  *
@@ -20,8 +21,8 @@ public class Ladder extends Subsystem {
     	
 	DoubleSolenoid swing;
 	
-	TalonSRX winch;
-	TalonSRX extend;
+	VictorSP winch;
+	VictorSP extend;
 	
 	Timer time;
 	
@@ -35,6 +36,9 @@ public class Ladder extends Subsystem {
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         //setDefaultCommand(new MySpecialCommand());
+    	
+    	winch = new VictorSP(RobotMap.LAD_EXT_MOTOR);
+    	extend = new VictorSP(RobotMap.LAD_WIN_MOTOR);
     	
     	swing = new DoubleSolenoid(RobotMap.LADDER_PNU_1, RobotMap.LADDER_PNU_2);
     	swing.set(Value.kForward);
@@ -55,6 +59,15 @@ public class Ladder extends Subsystem {
     	if(getSwing()){
     		swing.set(Value.kReverse);
     	}	
+    }
+    
+    public void toggleSwing(){
+    	if(getSwing()){
+    		swingIn();
+    	} else {
+    		swingOut();
+    	}
+    	
     }
     
     //!!!!!! CHECK FUNCTION !!!!!!

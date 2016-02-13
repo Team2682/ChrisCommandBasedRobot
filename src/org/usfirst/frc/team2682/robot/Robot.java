@@ -45,7 +45,7 @@ public class Robot extends IterativeRobot {
 		chassis = new DriveTrain();
 		arm = new ClawArm();
 		
-		new armControl(arm, auxStick).start();
+		//new armControl(arm, auxStick).start();
 		
 		armController = new armControl(arm, auxStick);
 		driveControl = new PWMDrive(chassis, driveStick);
@@ -76,6 +76,8 @@ public class Robot extends IterativeRobot {
 	 */
     public void autonomousInit() {
         
+    	
+    	
     }
 
     /**
